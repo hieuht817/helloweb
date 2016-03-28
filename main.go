@@ -5,11 +5,13 @@ import (
 	"net/http"
 	"github.com/zenazn/goji/web"
 	"fmt"
+	"flag"
 )
 
 func main() {
-	goji.Get("/", test)
+	flag.Set("bind", ":80")
 
+	goji.Get("/", test)
 	goji.Serve()
 }
 
